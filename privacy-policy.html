@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Atom8 Consulting - Learn how we collect, use, and protect your personal information.">
+    <title>Privacy Policy - Atom8 Consulting</title>
+    <!-- Load Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#6366F1',
+                        'primary-dark': '#4F46E5',
+                        'accent-pink': '#F472B6',
+                        'accent-purple': '#A78BFA',
+                        'accent-cyan': '#22D3EE',
+                        'dark-bg': '#0F0F1A',
+                        'dark-card': '#1A1A2E',
+                        'dark-card-hover': '#252545',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366F1 0%, #A78BFA 50%, #F472B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0F1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #6366F1, #A78BFA);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="glass rounded-2xl px-6 py-3 flex justify-between items-center">
+                <!-- Brand Logo -->
+                <a href="index.html" class="text-2xl font-black tracking-tight">
+                    <span class="gradient-text">Atom8</span><span class="text-accent-pink">.</span>
+                </a>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center space-x-1">
+                    <a href="index.html#hero" id="nav-home" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Home</a>
+                    <a href="index.html#services-section" id="nav-services" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Services</a>
+                    <a href="index.html#why-us" id="nav-why" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Why Us</a>
+                    <a href="index.html#contact-footer" id="nav-contact" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-3">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="px-4 py-2 text-sm font-medium rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300">
+                        <span id="current-lang">FR</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="index.html#contact-footer" class="hidden sm:inline-flex px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-blue to-accent-purple rounded-xl hover:shadow-lg hover:shadow-primary-blue/25 transition-all duration-300">
+                        Get Started
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none rounded-xl hover:bg-white/5 transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-2 glass rounded-2xl p-4 space-y-2">
+                <a href="index.html#hero" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                <a href="index.html#services-section" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Services</a>
+                <a href="index.html#why-us" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Why Us</a>
+                <a href="index.html#contact-footer" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <h1 id="page-title" class="text-4xl sm:text-5xl font-black text-white mb-4">
+                    <span class="gradient-text">Privacy Policy</span>
+                </h1>
+                <p id="last-updated" class="text-gray-400">Last updated: December 24, 2025</p>
+            </div>
+
+            <!-- Policy Content -->
+            <div class="glass rounded-3xl p-8 sm:p-12 space-y-8">
+                
+                <!-- Introduction -->
+                <section>
+                    <h2 id="intro-title" class="text-2xl font-bold text-white mb-4">Introduction</h2>
+                    <p id="intro-text" class="text-gray-300 leading-relaxed">
+                        Atom8 Consulting ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our consulting services in AI, Cloud, IoT, and Cybersecurity solutions.
+                    </p>
+                </section>
+
+                <!-- Information We Collect -->
+                <section>
+                    <h2 id="collect-title" class="text-2xl font-bold text-white mb-4">Information We Collect</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 id="personal-info-title" class="text-lg font-semibold text-accent-purple mb-2">Personal Information</h3>
+                            <p id="personal-info-text" class="text-gray-300 leading-relaxed">
+                                We may collect personal information that you voluntarily provide to us when you:
+                            </p>
+                            <ul id="personal-info-list" class="list-disc list-inside text-gray-300 mt-2 space-y-1 ml-4">
+                                <li>Fill out contact forms on our website</li>
+                                <li>Subscribe to our newsletter</li>
+                                <li>Request a consultation or quote</li>
+                                <li>Communicate with us via email or phone</li>
+                            </ul>
+                            <p id="personal-info-includes" class="text-gray-300 mt-2">
+                                This information may include your name, email address, phone number, company name, and job title.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 id="auto-info-title" class="text-lg font-semibold text-accent-purple mb-2">Automatically Collected Information</h3>
+                            <p id="auto-info-text" class="text-gray-300 leading-relaxed">
+                                When you visit our website, we may automatically collect certain information about your device, including your IP address, browser type, operating system, referring URLs, and information about how you interact with our website.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How We Use Your Information -->
+                <section>
+                    <h2 id="use-title" class="text-2xl font-bold text-white mb-4">How We Use Your Information</h2>
+                    <p id="use-intro" class="text-gray-300 leading-relaxed mb-2">We use the information we collect to:</p>
+                    <ul id="use-list" class="list-disc list-inside text-gray-300 space-y-1 ml-4">
+                        <li>Provide, operate, and maintain our services</li>
+                        <li>Respond to your inquiries and fulfill your requests</li>
+                        <li>Send you marketing and promotional communications (with your consent)</li>
+                        <li>Improve our website and services</li>
+                        <li>Comply with legal obligations</li>
+                        <li>Protect against fraudulent or illegal activity</li>
+                    </ul>
+                </section>
+
+                <!-- Information Sharing -->
+                <section>
+                    <h2 id="share-title" class="text-2xl font-bold text-white mb-4">Information Sharing and Disclosure</h2>
+                    <p id="share-text" class="text-gray-300 leading-relaxed">
+                        We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
+                    </p>
+                    <ul id="share-list" class="list-disc list-inside text-gray-300 mt-2 space-y-1 ml-4">
+                        <li>With service providers who assist us in operating our business</li>
+                        <li>To comply with legal obligations or respond to lawful requests</li>
+                        <li>To protect our rights, privacy, safety, or property</li>
+                        <li>In connection with a merger, acquisition, or sale of assets</li>
+                    </ul>
+                </section>
+
+                <!-- Data Security -->
+                <section>
+                    <h2 id="security-title" class="text-2xl font-bold text-white mb-4">Data Security</h2>
+                    <p id="security-text" class="text-gray-300 leading-relaxed">
+                        We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+                    </p>
+                </section>
+
+                <!-- Cookies -->
+                <section>
+                    <h2 id="cookies-title" class="text-2xl font-bold text-white mb-4">Cookies and Tracking Technologies</h2>
+                    <p id="cookies-text" class="text-gray-300 leading-relaxed">
+                        We may use cookies and similar tracking technologies to collect information about your browsing activities. You can set your browser to refuse all or some cookies, or to alert you when cookies are being sent. If you disable or refuse cookies, some parts of our website may become inaccessible or not function properly.
+                    </p>
+                </section>
+
+                <!-- Your Rights -->
+                <section>
+                    <h2 id="rights-title" class="text-2xl font-bold text-white mb-4">Your Rights</h2>
+                    <p id="rights-intro" class="text-gray-300 leading-relaxed mb-2">Depending on your location, you may have the following rights regarding your personal information:</p>
+                    <ul id="rights-list" class="list-disc list-inside text-gray-300 space-y-1 ml-4">
+                        <li>Access and receive a copy of your personal data</li>
+                        <li>Rectify or update inaccurate personal data</li>
+                        <li>Request deletion of your personal data</li>
+                        <li>Object to or restrict processing of your personal data</li>
+                        <li>Withdraw consent at any time (where applicable)</li>
+                        <li>Lodge a complaint with a supervisory authority</li>
+                    </ul>
+                </section>
+
+                <!-- Third-Party Links -->
+                <section>
+                    <h2 id="third-party-title" class="text-2xl font-bold text-white mb-4">Third-Party Links</h2>
+                    <p id="third-party-text" class="text-gray-300 leading-relaxed">
+                        Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.
+                    </p>
+                </section>
+
+                <!-- Children's Privacy -->
+                <section>
+                    <h2 id="children-title" class="text-2xl font-bold text-white mb-4">Children's Privacy</h2>
+                    <p id="children-text" class="text-gray-300 leading-relaxed">
+                        Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete that information.
+                    </p>
+                </section>
+
+                <!-- Changes to Policy -->
+                <section>
+                    <h2 id="changes-title" class="text-2xl font-bold text-white mb-4">Changes to This Privacy Policy</h2>
+                    <p id="changes-text" class="text-gray-300 leading-relaxed">
+                        We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy Policy periodically for any changes.
+                    </p>
+                </section>
+
+                <!-- Contact Us -->
+                <section>
+                    <h2 id="contact-title" class="text-2xl font-bold text-white mb-4">Contact Us</h2>
+                    <p id="contact-text" class="text-gray-300 leading-relaxed mb-4">
+                        If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
+                    </p>
+                    <div class="glass rounded-2xl p-6 space-y-2">
+                        <p class="text-white font-semibold">Atom8 Consulting</p>
+                        <p class="text-gray-300">3434-135 Kildaire Farm Rd #910</p>
+                        <p class="text-gray-300">Cary, NC 27518</p>
+                        <p class="text-gray-300">Email: <a href="mailto:info@atom8.info" class="text-primary-blue hover:text-accent-purple transition-colors">info@atom8.info</a></p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center mt-8">
+                <a href="index.html" id="back-home" class="inline-flex items-center gap-2 text-primary-blue hover:text-accent-purple transition-colors font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card py-8 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p id="copyright-text" class="text-gray-500 text-sm">&copy; 2025 Atom8 Consulting. All Rights Reserved.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="privacy-policy.html" id="privacy-link" class="text-primary-blue hover:text-accent-purple transition-colors">Privacy Policy</a>
+                    <a href="terms-of-service.html" id="terms-link" class="text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Language Toggle -->
+    <script>
+        const content = {
+            en: {
+                langToggleText: "FR",
+                navHome: 'Home',
+                navServices: 'Services',
+                navWhy: 'Why Us',
+                navContact: 'Contact',
+                pageTitle: '<span class="gradient-text">Privacy Policy</span>',
+                lastUpdated: 'Last updated: December 24, 2025',
+                introTitle: 'Introduction',
+                introText: 'Atom8 Consulting ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our consulting services in AI, Cloud, IoT, and Cybersecurity solutions.',
+                collectTitle: 'Information We Collect',
+                personalInfoTitle: 'Personal Information',
+                personalInfoText: 'We may collect personal information that you voluntarily provide to us when you:',
+                personalInfoList: '<li>Fill out contact forms on our website</li><li>Subscribe to our newsletter</li><li>Request a consultation or quote</li><li>Communicate with us via email or phone</li>',
+                personalInfoIncludes: 'This information may include your name, email address, phone number, company name, and job title.',
+                autoInfoTitle: 'Automatically Collected Information',
+                autoInfoText: 'When you visit our website, we may automatically collect certain information about your device, including your IP address, browser type, operating system, referring URLs, and information about how you interact with our website.',
+                useTitle: 'How We Use Your Information',
+                useIntro: 'We use the information we collect to:',
+                useList: '<li>Provide, operate, and maintain our services</li><li>Respond to your inquiries and fulfill your requests</li><li>Send you marketing and promotional communications (with your consent)</li><li>Improve our website and services</li><li>Comply with legal obligations</li><li>Protect against fraudulent or illegal activity</li>',
+                shareTitle: 'Information Sharing and Disclosure',
+                shareText: 'We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:',
+                shareList: '<li>With service providers who assist us in operating our business</li><li>To comply with legal obligations or respond to lawful requests</li><li>To protect our rights, privacy, safety, or property</li><li>In connection with a merger, acquisition, or sale of assets</li>',
+                securityTitle: 'Data Security',
+                securityText: 'We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.',
+                cookiesTitle: 'Cookies and Tracking Technologies',
+                cookiesText: 'We may use cookies and similar tracking technologies to collect information about your browsing activities. You can set your browser to refuse all or some cookies, or to alert you when cookies are being sent. If you disable or refuse cookies, some parts of our website may become inaccessible or not function properly.',
+                rightsTitle: 'Your Rights',
+                rightsIntro: 'Depending on your location, you may have the following rights regarding your personal information:',
+                rightsList: '<li>Access and receive a copy of your personal data</li><li>Rectify or update inaccurate personal data</li><li>Request deletion of your personal data</li><li>Object to or restrict processing of your personal data</li><li>Withdraw consent at any time (where applicable)</li><li>Lodge a complaint with a supervisory authority</li>',
+                thirdPartyTitle: 'Third-Party Links',
+                thirdPartyText: 'Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.',
+                childrenTitle: "Children's Privacy",
+                childrenText: 'Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete that information.',
+                changesTitle: 'Changes to This Privacy Policy',
+                changesText: 'We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy Policy periodically for any changes.',
+                contactTitle: 'Contact Us',
+                contactText: 'If you have any questions about this Privacy Policy or our privacy practices, please contact us at:',
+                backHome: 'Back to Home',
+                copyright: '© 2025 Atom8 Consulting. All Rights Reserved.',
+                privacyPolicy: 'Privacy Policy',
+                termsOfService: 'Terms of Service',
+            },
+            fr: {
+                langToggleText: "EN",
+                navHome: 'Accueil',
+                navServices: 'Services',
+                navWhy: 'Pourquoi Nous',
+                navContact: 'Contact',
+                pageTitle: '<span class="gradient-text">Politique de Confidentialité</span>',
+                lastUpdated: 'Dernière mise à jour : 24 décembre 2025',
+                introTitle: 'Introduction',
+                introText: 'Atom8 Consulting (« nous », « notre » ou « nos ») s\'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web ou utilisez nos services',
+                collectTitle: 'Informations que Nous Collectons',
+                personalInfoTitle: 'Informations Personnelles',
+                personalInfoText: 'Nous pouvons collecter des informations personnelles que vous nous fournissez volontairement lorsque vous :',
+                personalInfoList: '<li>Remplissez des formulaires de contact sur notre site web</li><li>Vous abonnez à notre newsletter</li><li>Demandez une consultation ou un devis</li><li>Communiquez avec nous par email ou téléphone</li>',
+                personalInfoIncludes: 'Ces informations peuvent inclure votre nom, adresse email, numéro de téléphone, nom de l\'entreprise et intitulé de poste.',
+                autoInfoTitle: 'Informations Collectées Automatiquement',
+                autoInfoText: 'Lorsque vous visitez notre site web, nous pouvons collecter automatiquement certaines informations sur votre appareil, notamment votre adresse IP, type de navigateur, système d\'exploitation, URLs de référence et informations sur la façon dont vous interagissez avec notre site web.',
+                useTitle: 'Comment Nous Utilisons Vos Informations',
+                useIntro: 'Nous utilisons les informations que nous collectons pour :',
+                useList: '<li>Fournir, exploiter et maintenir nos services</li><li>Répondre à vos demandes et satisfaire vos requêtes</li><li>Vous envoyer des communications marketing et promotionnelles (avec votre consentement)</li><li>Améliorer notre site web et nos services</li><li>Respecter les obligations légales</li><li>Protéger contre les activités frauduleuses ou illégales</li>',
+                shareTitle: 'Partage et Divulgation des Informations',
+                shareText: 'Nous ne vendons, n\'échangeons ni ne louons vos informations personnelles à des tiers. Nous pouvons partager vos informations uniquement dans les circonstances suivantes :',
+                shareList: '<li>Avec des prestataires de services qui nous aident à exploiter notre entreprise</li><li>Pour respecter les obligations légales ou répondre aux demandes légitimes</li><li>Pour protéger nos droits, notre vie privée, notre sécurité ou nos biens</li><li>Dans le cadre d\'une fusion, acquisition ou vente d\'actifs</li>',
+                securityTitle: 'Sécurité des Données',
+                securityText: 'Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos informations personnelles contre l\'accès non autorisé, l\'altération, la divulgation ou la destruction. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n\'est sécurisée à 100%, et nous ne pouvons garantir une sécurité absolue.',
+                cookiesTitle: 'Cookies et Technologies de Suivi',
+                cookiesText: 'Nous pouvons utiliser des cookies et des technologies de suivi similaires pour collecter des informations sur vos activités de navigation. Vous pouvez configurer votre navigateur pour refuser tous les cookies ou certains d\'entre eux, ou pour vous alerter lorsque des cookies sont envoyés. Si vous désactivez ou refusez les cookies, certaines parties de notre site web peuvent devenir inaccessibles ou ne pas fonctionner correctement.',
+                rightsTitle: 'Vos Droits',
+                rightsIntro: 'Selon votre localisation, vous pouvez avoir les droits suivants concernant vos informations personnelles :',
+                rightsList: '<li>Accéder et recevoir une copie de vos données personnelles</li><li>Rectifier ou mettre à jour des données personnelles inexactes</li><li>Demander la suppression de vos données personnelles</li><li>Vous opposer ou restreindre le traitement de vos données personnelles</li><li>Retirer votre consentement à tout moment (le cas échéant)</li><li>Déposer une plainte auprès d\'une autorité de contrôle</li>',
+                thirdPartyTitle: 'Liens vers des Tiers',
+                thirdPartyText: 'Notre site web peut contenir des liens vers des sites web tiers. Nous ne sommes pas responsables des pratiques de confidentialité ou du contenu de ces sites externes. Nous vous encourageons à consulter les politiques de confidentialité de tout site tiers que vous visitez.',
+                childrenTitle: 'Confidentialité des Enfants',
+                childrenText: 'Nos services ne s\'adressent pas aux personnes de moins de 18 ans. Nous ne collectons pas sciemment d\'informations personnelles auprès d\'enfants. Si nous apprenons que nous avons collecté des informations personnelles d\'un enfant sans le consentement parental, nous prendrons des mesures pour supprimer ces informations.',
+                changesTitle: 'Modifications de Cette Politique de Confidentialité',
+                changesText: 'Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre. Nous vous informerons de tout changement en publiant la nouvelle Politique de Confidentialité sur cette page et en mettant à jour la date de « Dernière mise à jour ». Nous vous encourageons à consulter périodiquement cette Politique de Confidentialité pour tout changement.',
+                contactTitle: 'Nous Contacter',
+                contactText: 'Si vous avez des questions concernant cette Politique de Confidentialité ou nos pratiques en matière de confidentialité, veuillez nous contacter à :',
+                backHome: 'Retour à l\'Accueil',
+                copyright: '© 2025 Atom8 Consulting. Tous Droits Réservés.',
+                privacyPolicy: 'Politique de Confidentialité',
+                termsOfService: 'Conditions d\'Utilisation',
+            }
+        };
+
+        let currentLang = 'en';
+
+        const updateContent = () => {
+            const langData = content[currentLang];
+            
+            document.getElementById('current-lang').textContent = langData.langToggleText;
+            document.getElementById('nav-home').textContent = langData.navHome;
+            document.getElementById('nav-services').textContent = langData.navServices;
+            document.getElementById('nav-why').textContent = langData.navWhy;
+            document.getElementById('nav-contact').textContent = langData.navContact;
+            
+            document.getElementById('page-title').innerHTML = langData.pageTitle;
+            document.getElementById('last-updated').textContent = langData.lastUpdated;
+            
+            document.getElementById('intro-title').textContent = langData.introTitle;
+            document.getElementById('intro-text').textContent = langData.introText;
+            
+            document.getElementById('collect-title').textContent = langData.collectTitle;
+            document.getElementById('personal-info-title').textContent = langData.personalInfoTitle;
+            document.getElementById('personal-info-text').textContent = langData.personalInfoText;
+            document.getElementById('personal-info-list').innerHTML = langData.personalInfoList;
+            document.getElementById('personal-info-includes').textContent = langData.personalInfoIncludes;
+            document.getElementById('auto-info-title').textContent = langData.autoInfoTitle;
+            document.getElementById('auto-info-text').textContent = langData.autoInfoText;
+            
+            document.getElementById('use-title').textContent = langData.useTitle;
+            document.getElementById('use-intro').textContent = langData.useIntro;
+            document.getElementById('use-list').innerHTML = langData.useList;
+            
+            document.getElementById('share-title').textContent = langData.shareTitle;
+            document.getElementById('share-text').textContent = langData.shareText;
+            document.getElementById('share-list').innerHTML = langData.shareList;
+            
+            document.getElementById('security-title').textContent = langData.securityTitle;
+            document.getElementById('security-text').textContent = langData.securityText;
+            
+            document.getElementById('cookies-title').textContent = langData.cookiesTitle;
+            document.getElementById('cookies-text').textContent = langData.cookiesText;
+            
+            document.getElementById('rights-title').textContent = langData.rightsTitle;
+            document.getElementById('rights-intro').textContent = langData.rightsIntro;
+            document.getElementById('rights-list').innerHTML = langData.rightsList;
+            
+            document.getElementById('third-party-title').textContent = langData.thirdPartyTitle;
+            document.getElementById('third-party-text').textContent = langData.thirdPartyText;
+            
+            document.getElementById('children-title').textContent = langData.childrenTitle;
+            document.getElementById('children-text').textContent = langData.childrenText;
+            
+            document.getElementById('changes-title').textContent = langData.changesTitle;
+            document.getElementById('changes-text').textContent = langData.changesText;
+            
+            document.getElementById('contact-title').textContent = langData.contactTitle;
+            document.getElementById('contact-text').textContent = langData.contactText;
+            
+            document.getElementById('back-home').innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>' + langData.backHome;
+            
+            document.getElementById('copyright-text').textContent = langData.copyright;
+            document.getElementById('privacy-link').textContent = langData.privacyPolicy;
+            document.getElementById('terms-link').textContent = langData.termsOfService;
+        };
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            document.documentElement.lang = currentLang;
+            updateContent();
+        });
+
+        document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        window.onload = () => {
+            document.documentElement.lang = currentLang;
+            updateContent();
+        };
+    </script>
+</body>
+</html>

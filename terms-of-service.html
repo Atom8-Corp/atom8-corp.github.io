@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Atom8 Consulting - Read our terms and conditions for using our services.">
+    <title>Terms of Service - Atom8 Consulting</title>
+    <!-- Load Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for custom colors and font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#6366F1',
+                        'primary-dark': '#4F46E5',
+                        'accent-pink': '#F472B6',
+                        'accent-purple': '#A78BFA',
+                        'accent-cyan': '#22D3EE',
+                        'dark-bg': '#0F0F1A',
+                        'dark-card': '#1A1A2E',
+                        'dark-card-hover': '#252545',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366F1 0%, #A78BFA 50%, #F472B6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0F1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #6366F1, #A78BFA);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="glass rounded-2xl px-6 py-3 flex justify-between items-center">
+                <!-- Brand Logo -->
+                <a href="index.html" class="text-2xl font-black tracking-tight">
+                    <span class="gradient-text">Atom8</span><span class="text-accent-pink">.</span>
+                </a>
+
+                <!-- Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center space-x-1">
+                    <a href="index.html#hero" id="nav-home" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Home</a>
+                    <a href="index.html#services-section" id="nav-services" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Services</a>
+                    <a href="index.html#why-us" id="nav-why" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Why Us</a>
+                    <a href="index.html#contact-footer" id="nav-contact" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-3">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" class="px-4 py-2 text-sm font-medium rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300">
+                        <span id="current-lang">FR</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="index.html#contact-footer" class="hidden sm:inline-flex px-5 py-2 text-sm font-semibold text-white bg-gradient-to-r from-primary-blue to-accent-purple rounded-xl hover:shadow-lg hover:shadow-primary-blue/25 transition-all duration-300">
+                        Get Started
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none rounded-xl hover:bg-white/5 transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-2 glass rounded-2xl p-4 space-y-2">
+                <a href="index.html#hero" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
+                <a href="index.html#services-section" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Services</a>
+                <a href="index.html#why-us" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Why Us</a>
+                <a href="index.html#contact-footer" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <h1 id="page-title" class="text-4xl sm:text-5xl font-black text-white mb-4">
+                    <span class="gradient-text">Terms of Service</span>
+                </h1>
+                <p id="last-updated" class="text-gray-400">Last updated: December 24, 2025</p>
+            </div>
+
+            <!-- Terms Content -->
+            <div class="glass rounded-3xl p-8 sm:p-12 space-y-8">
+                
+                <!-- Agreement to Terms -->
+                <section>
+                    <h2 id="agreement-title" class="text-2xl font-bold text-white mb-4">Agreement to Terms</h2>
+                    <p id="agreement-text" class="text-gray-300 leading-relaxed">
+                        By accessing or using the services provided by Atom8 Consulting ("Company," "we," "our," or "us"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our services. These Terms apply to all visitors, users, and clients who access or use our website and consulting services.
+                    </p>
+                </section>
+
+                <!-- Services Description -->
+                <section>
+                    <h2 id="services-title" class="text-2xl font-bold text-white mb-4">Description of Services</h2>
+                    <p id="services-text" class="text-gray-300 leading-relaxed">
+                        Atom8 Consulting provides professional consulting services in the areas of Artificial Intelligence, Cloud Infrastructure, IoT & Edge Computing, and Cybersecurity. Our services include but are not limited to:
+                    </p>
+                    <ul id="services-list" class="list-disc list-inside text-gray-300 mt-2 space-y-1 ml-4">
+                        <li>Technology consulting and strategic advisory</li>
+                        <li>System design, implementation, and integration</li>
+                        <li>Cloud migration and optimization</li>
+                        <li>AI/ML solution development</li>
+                        <li>Cybersecurity assessments and implementation</li>
+                        <li>IoT solution architecture and deployment</li>
+                    </ul>
+                </section>
+
+                <!-- Client Responsibilities -->
+                <section>
+                    <h2 id="responsibilities-title" class="text-2xl font-bold text-white mb-4">Client Responsibilities</h2>
+                    <p id="responsibilities-intro" class="text-gray-300 leading-relaxed mb-2">As a client, you agree to:</p>
+                    <ul id="responsibilities-list" class="list-disc list-inside text-gray-300 space-y-1 ml-4">
+                        <li>Provide accurate and complete information necessary for service delivery</li>
+                        <li>Cooperate with our team and provide timely access to required systems and personnel</li>
+                        <li>Review and provide feedback on deliverables within agreed timeframes</li>
+                        <li>Ensure proper authorization for any access granted to us</li>
+                        <li>Comply with all applicable laws and regulations</li>
+                        <li>Maintain confidentiality of any proprietary methodologies shared with you</li>
+                    </ul>
+                </section>
+
+                <!-- Intellectual Property -->
+                <section>
+                    <h2 id="ip-title" class="text-2xl font-bold text-white mb-4">Intellectual Property Rights</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 id="our-ip-title" class="text-lg font-semibold text-accent-purple mb-2">Our Intellectual Property</h3>
+                            <p id="our-ip-text" class="text-gray-300 leading-relaxed">
+                                All content on our website, including text, graphics, logos, and software, is the property of Atom8 Consulting and is protected by intellectual property laws. Our proprietary methodologies, frameworks, and tools remain our exclusive property unless explicitly transferred in writing.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 id="deliverables-title" class="text-lg font-semibold text-accent-purple mb-2">Deliverables</h3>
+                            <p id="deliverables-text" class="text-gray-300 leading-relaxed">
+                                Unless otherwise specified in a separate agreement, upon full payment, clients receive a license to use deliverables created specifically for them. Pre-existing materials and tools used in creating deliverables remain our property.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Terms -->
+                <section>
+                    <h2 id="payment-title" class="text-2xl font-bold text-white mb-4">Payment Terms</h2>
+                    <ul id="payment-list" class="list-disc list-inside text-gray-300 space-y-1 ml-4">
+                        <li>Payment terms will be specified in individual service agreements or statements of work</li>
+                        <li>Invoices are due within 30 days of receipt unless otherwise agreed</li>
+                        <li>Late payments may incur interest at 1.5% per month</li>
+                        <li>We reserve the right to suspend services for overdue accounts</li>
+                        <li>All fees are exclusive of applicable taxes unless stated otherwise</li>
+                    </ul>
+                </section>
+
+                <!-- Confidentiality -->
+                <section>
+                    <h2 id="confidentiality-title" class="text-2xl font-bold text-white mb-4">Confidentiality</h2>
+                    <p id="confidentiality-text" class="text-gray-300 leading-relaxed">
+                        Both parties agree to maintain the confidentiality of any proprietary or sensitive information disclosed during the course of our engagement. This obligation survives the termination of any agreement between us. Confidential information excludes information that is publicly available, independently developed, or rightfully received from third parties.
+                    </p>
+                </section>
+
+                <!-- Limitation of Liability -->
+                <section>
+                    <h2 id="liability-title" class="text-2xl font-bold text-white mb-4">Limitation of Liability</h2>
+                    <p id="liability-text" class="text-gray-300 leading-relaxed">
+                        To the maximum extent permitted by law, Atom8 Consulting shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities. Our total liability for any claim arising from our services shall not exceed the fees paid by you for the specific services giving rise to the claim.
+                    </p>
+                </section>
+
+                <!-- Warranties and Disclaimers -->
+                <section>
+                    <h2 id="warranties-title" class="text-2xl font-bold text-white mb-4">Warranties and Disclaimers</h2>
+                    <p id="warranties-text" class="text-gray-300 leading-relaxed">
+                        We provide our services with reasonable skill and care. However, except as expressly stated in these Terms or a separate agreement, our services are provided "as is" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+                    </p>
+                </section>
+
+                <!-- Indemnification -->
+                <section>
+                    <h2 id="indemnification-title" class="text-2xl font-bold text-white mb-4">Indemnification</h2>
+                    <p id="indemnification-text" class="text-gray-300 leading-relaxed">
+                        You agree to indemnify, defend, and hold harmless Atom8 Consulting, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney fees) arising from your breach of these Terms, your use of our services, or your violation of any third-party rights.
+                    </p>
+                </section>
+
+                <!-- Termination -->
+                <section>
+                    <h2 id="termination-title" class="text-2xl font-bold text-white mb-4">Termination</h2>
+                    <p id="termination-text" class="text-gray-300 leading-relaxed">
+                        Either party may terminate an engagement with written notice as specified in the applicable service agreement. Upon termination, you must pay for all services rendered up to the termination date. Provisions relating to intellectual property, confidentiality, limitation of liability, and indemnification shall survive termination.
+                    </p>
+                </section>
+
+                <!-- Governing Law -->
+                <section>
+                    <h2 id="governing-title" class="text-2xl font-bold text-white mb-4">Governing Law and Dispute Resolution</h2>
+                    <p id="governing-text" class="text-gray-300 leading-relaxed">
+                        These Terms shall be governed by and construed in accordance with the laws of the State of North Carolina, United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or our services shall be resolved through binding arbitration in Wake County, North Carolina, unless otherwise agreed in writing.
+                    </p>
+                </section>
+
+                <!-- Modifications -->
+                <section>
+                    <h2 id="modifications-title" class="text-2xl font-bold text-white mb-4">Modifications to Terms</h2>
+                    <p id="modifications-text" class="text-gray-300 leading-relaxed">
+                        We reserve the right to modify these Terms at any time. We will notify you of any material changes by posting the updated Terms on our website and updating the "Last updated" date. Your continued use of our services after such modifications constitutes your acceptance of the updated Terms.
+                    </p>
+                </section>
+
+                <!-- Severability -->
+                <section>
+                    <h2 id="severability-title" class="text-2xl font-bold text-white mb-4">Severability</h2>
+                    <p id="severability-text" class="text-gray-300 leading-relaxed">
+                        If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining Terms remain in full force and effect.
+                    </p>
+                </section>
+
+                <!-- Entire Agreement -->
+                <section>
+                    <h2 id="entire-title" class="text-2xl font-bold text-white mb-4">Entire Agreement</h2>
+                    <p id="entire-text" class="text-gray-300 leading-relaxed">
+                        These Terms, together with any applicable service agreements or statements of work, constitute the entire agreement between you and Atom8 Consulting regarding the subject matter herein and supersede all prior agreements and understandings, whether written or oral.
+                    </p>
+                </section>
+
+                <!-- Contact Us -->
+                <section>
+                    <h2 id="contact-title" class="text-2xl font-bold text-white mb-4">Contact Us</h2>
+                    <p id="contact-text" class="text-gray-300 leading-relaxed mb-4">
+                        If you have any questions about these Terms of Service, please contact us at:
+                    </p>
+                    <div class="glass rounded-2xl p-6 space-y-2">
+                        <p class="text-white font-semibold">Atom8 Consulting</p>
+                        <p class="text-gray-300">3434-135 Kildaire Farm Rd #910</p>
+                        <p class="text-gray-300">Cary, NC 27518</p>
+                        <p class="text-gray-300">Email: <a href="mailto:info@atom8.info" class="text-primary-blue hover:text-accent-purple transition-colors">info@atom8.info</a></p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center mt-8">
+                <a href="index.html" id="back-home" class="inline-flex items-center gap-2 text-primary-blue hover:text-accent-purple transition-colors font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card py-8 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p id="copyright-text" class="text-gray-500 text-sm">&copy; 2025 Atom8 Consulting. All Rights Reserved.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="privacy-policy.html" id="privacy-link" class="text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+                    <a href="terms-of-service.html" id="terms-link" class="text-primary-blue hover:text-accent-purple transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Language Toggle -->
+    <script>
+        const content = {
+            en: {
+                langToggleText: "FR",
+                navHome: 'Home',
+                navServices: 'Services',
+                navWhy: 'Why Us',
+                navContact: 'Contact',
+                pageTitle: '<span class="gradient-text">Terms of Service</span>',
+                lastUpdated: 'Last updated: December 24, 2025',
+                agreementTitle: 'Agreement to Terms',
+                agreementText: 'By accessing or using the services provided by Atom8 Consulting ("Company," "we," "our," or "us"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our services. These Terms apply to all visitors, users, and clients who access or use our website and consulting services.',
+                servicesTitle: 'Description of Services',
+                servicesText: 'Atom8 Consulting provides professional consulting services in the areas of Artificial Intelligence, Cloud Infrastructure, IoT & Edge Computing, and Cybersecurity. Our services include but are not limited to:',
+                servicesList: '<li>Technology consulting and strategic advisory</li><li>System design, implementation, and integration</li><li>Cloud migration and optimization</li><li>AI/ML solution development</li><li>Cybersecurity assessments and implementation</li><li>IoT solution architecture and deployment</li>',
+                responsibilitiesTitle: 'Client Responsibilities',
+                responsibilitiesIntro: 'As a client, you agree to:',
+                responsibilitiesList: '<li>Provide accurate and complete information necessary for service delivery</li><li>Cooperate with our team and provide timely access to required systems and personnel</li><li>Review and provide feedback on deliverables within agreed timeframes</li><li>Ensure proper authorization for any access granted to us</li><li>Comply with all applicable laws and regulations</li><li>Maintain confidentiality of any proprietary methodologies shared with you</li>',
+                ipTitle: 'Intellectual Property Rights',
+                ourIpTitle: 'Our Intellectual Property',
+                ourIpText: 'All content on our website, including text, graphics, logos, and software, is the property of Atom8 Consulting and is protected by intellectual property laws. Our proprietary methodologies, frameworks, and tools remain our exclusive property unless explicitly transferred in writing.',
+                deliverablesTitle: 'Deliverables',
+                deliverablesText: 'Unless otherwise specified in a separate agreement, upon full payment, clients receive a license to use deliverables created specifically for them. Pre-existing materials and tools used in creating deliverables remain our property.',
+                paymentTitle: 'Payment Terms',
+                paymentList: '<li>Payment terms will be specified in individual service agreements or statements of work</li><li>Invoices are due within 30 days of receipt unless otherwise agreed</li><li>Late payments may incur interest at 1.5% per month</li><li>We reserve the right to suspend services for overdue accounts</li><li>All fees are exclusive of applicable taxes unless stated otherwise</li>',
+                confidentialityTitle: 'Confidentiality',
+                confidentialityText: 'Both parties agree to maintain the confidentiality of any proprietary or sensitive information disclosed during the course of our engagement. This obligation survives the termination of any agreement between us. Confidential information excludes information that is publicly available, independently developed, or rightfully received from third parties.',
+                liabilityTitle: 'Limitation of Liability',
+                liabilityText: 'To the maximum extent permitted by law, Atom8 Consulting shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities. Our total liability for any claim arising from our services shall not exceed the fees paid by you for the specific services giving rise to the claim.',
+                warrantiesTitle: 'Warranties and Disclaimers',
+                warrantiesText: 'We provide our services with reasonable skill and care. However, except as expressly stated in these Terms or a separate agreement, our services are provided "as is" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.',
+                indemnificationTitle: 'Indemnification',
+                indemnificationText: 'You agree to indemnify, defend, and hold harmless Atom8 Consulting, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including reasonable attorney fees) arising from your breach of these Terms, your use of our services, or your violation of any third-party rights.',
+                terminationTitle: 'Termination',
+                terminationText: 'Either party may terminate an engagement with written notice as specified in the applicable service agreement. Upon termination, you must pay for all services rendered up to the termination date. Provisions relating to intellectual property, confidentiality, limitation of liability, and indemnification shall survive termination.',
+                governingTitle: 'Governing Law and Dispute Resolution',
+                governingText: 'These Terms shall be governed by and construed in accordance with the laws of the State of North Carolina, United States, without regard to its conflict of law provisions. Any disputes arising from these Terms or our services shall be resolved through binding arbitration in Wake County, North Carolina, unless otherwise agreed in writing.',
+                modificationsTitle: 'Modifications to Terms',
+                modificationsText: 'We reserve the right to modify these Terms at any time. We will notify you of any material changes by posting the updated Terms on our website and updating the "Last updated" date. Your continued use of our services after such modifications constitutes your acceptance of the updated Terms.',
+                severabilityTitle: 'Severability',
+                severabilityText: 'If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining Terms remain in full force and effect.',
+                entireTitle: 'Entire Agreement',
+                entireText: 'These Terms, together with any applicable service agreements or statements of work, constitute the entire agreement between you and Atom8 Consulting regarding the subject matter herein and supersede all prior agreements and understandings, whether written or oral.',
+                contactTitle: 'Contact Us',
+                contactText: 'If you have any questions about these Terms of Service, please contact us at:',
+                backHome: 'Back to Home',
+                copyright: '© 2025 Atom8 Consulting. All Rights Reserved.',
+                privacyPolicy: 'Privacy Policy',
+                termsOfService: 'Terms of Service',
+            },
+            fr: {
+                langToggleText: "EN",
+                navHome: 'Accueil',
+                navServices: 'Services',
+                navWhy: 'Pourquoi Nous',
+                navContact: 'Contact',
+                pageTitle: '<span class="gradient-text">Conditions d\'Utilisation</span>',
+                lastUpdated: 'Dernière mise à jour : 24 décembre 2025',
+                agreementTitle: 'Acceptation des Conditions',
+                agreementText: 'En accédant ou en utilisant les services fournis par Atom8 Consulting (« Société », « nous », « notre » ou « nos »), vous acceptez d\'être lié par ces Conditions d\'Utilisation (« Conditions »). Si vous n\'acceptez pas ces Conditions, veuillez ne pas utiliser nos services. Ces Conditions s\'appliquent à tous les visiteurs, utilisateurs et clients qui accèdent ou utilisent notre site web et nos services de conseil.',
+                servicesTitle: 'Description des Services',
+                servicesText: 'Atom8 Consulting fournit des services de conseil professionnels dans les domaines de l\'Intelligence Artificielle, de l\'Infrastructure Cloud, de l\'IoT et de l\'Edge Computing, et de la Cybersécurité. Nos services comprennent, sans s\'y limiter :',
+                servicesList: '<li>Conseil technologique et conseil stratégique</li><li>Conception, mise en œuvre et intégration de systèmes</li><li>Migration et optimisation cloud</li><li>Développement de solutions IA/ML</li><li>Évaluations et mise en œuvre de la cybersécurité</li><li>Architecture et déploiement de solutions IoT</li>',
+                responsibilitiesTitle: 'Responsabilités du Client',
+                responsibilitiesIntro: 'En tant que client, vous acceptez de :',
+                responsibilitiesList: '<li>Fournir des informations exactes et complètes nécessaires à la prestation des services</li><li>Coopérer avec notre équipe et fournir un accès rapide aux systèmes et au personnel requis</li><li>Examiner et fournir des commentaires sur les livrables dans les délais convenus</li><li>Assurer une autorisation appropriée pour tout accès qui nous est accordé</li><li>Respecter toutes les lois et réglementations applicables</li><li>Maintenir la confidentialité de toute méthodologie propriétaire partagée avec vous</li>',
+                ipTitle: 'Droits de Propriété Intellectuelle',
+                ourIpTitle: 'Notre Propriété Intellectuelle',
+                ourIpText: 'Tout le contenu de notre site web, y compris les textes, graphiques, logos et logiciels, est la propriété d\'Atom8 Consulting et est protégé par les lois sur la propriété intellectuelle. Nos méthodologies, cadres et outils propriétaires restent notre propriété exclusive, sauf transfert explicite par écrit.',
+                deliverablesTitle: 'Livrables',
+                deliverablesText: 'Sauf indication contraire dans un accord séparé, après paiement intégral, les clients reçoivent une licence pour utiliser les livrables créés spécifiquement pour eux. Les matériaux et outils préexistants utilisés pour créer les livrables restent notre propriété.',
+                paymentTitle: 'Conditions de Paiement',
+                paymentList: '<li>Les conditions de paiement seront spécifiées dans les contrats de service individuels ou les énoncés de travail</li><li>Les factures sont dues dans les 30 jours suivant leur réception, sauf accord contraire</li><li>Les retards de paiement peuvent entraîner des intérêts de 1,5% par mois</li><li>Nous nous réservons le droit de suspendre les services pour les comptes en souffrance</li><li>Tous les frais sont hors taxes applicables, sauf indication contraire</li>',
+                confidentialityTitle: 'Confidentialité',
+                confidentialityText: 'Les deux parties s\'engagent à maintenir la confidentialité de toute information propriétaire ou sensible divulguée au cours de notre engagement. Cette obligation survit à la résiliation de tout accord entre nous. Les informations confidentielles excluent les informations qui sont publiquement disponibles, développées indépendamment ou légitimement reçues de tiers.',
+                liabilityTitle: 'Limitation de Responsabilité',
+                liabilityText: 'Dans toute la mesure permise par la loi, Atom8 Consulting ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, y compris, mais sans s\'y limiter, la perte de profits, de données ou d\'opportunités commerciales. Notre responsabilité totale pour toute réclamation découlant de nos services ne dépassera pas les frais que vous avez payés pour les services spécifiques donnant lieu à la réclamation.',
+                warrantiesTitle: 'Garanties et Avertissements',
+                warrantiesText: 'Nous fournissons nos services avec compétence et soin raisonnables. Cependant, sauf indication expresse contraire dans ces Conditions ou dans un accord séparé, nos services sont fournis « tels quels » sans garanties d\'aucune sorte, expresses ou implicites, y compris, mais sans s\'y limiter, les garanties implicites de qualité marchande, d\'adéquation à un usage particulier ou de non-contrefaçon.',
+                indemnificationTitle: 'Indemnisation',
+                indemnificationText: 'Vous acceptez d\'indemniser, de défendre et de dégager de toute responsabilité Atom8 Consulting, ses dirigeants, administrateurs, employés et agents de toute réclamation, dommage, perte ou dépense (y compris les honoraires d\'avocat raisonnables) découlant de votre violation de ces Conditions, de votre utilisation de nos services ou de votre violation des droits de tiers.',
+                terminationTitle: 'Résiliation',
+                terminationText: 'L\'une ou l\'autre partie peut résilier un engagement par avis écrit tel que spécifié dans le contrat de service applicable. À la résiliation, vous devez payer tous les services rendus jusqu\'à la date de résiliation. Les dispositions relatives à la propriété intellectuelle, à la confidentialité, à la limitation de responsabilité et à l\'indemnisation survivent à la résiliation.',
+                governingTitle: 'Loi Applicable et Résolution des Litiges',
+                governingText: 'Ces Conditions seront régies et interprétées conformément aux lois de l\'État de Caroline du Nord, États-Unis, sans tenir compte de ses dispositions en matière de conflits de lois. Tout litige découlant de ces Conditions ou de nos services sera résolu par arbitrage contraignant dans le comté de Wake, Caroline du Nord, sauf accord contraire par écrit.',
+                modificationsTitle: 'Modifications des Conditions',
+                modificationsText: 'Nous nous réservons le droit de modifier ces Conditions à tout moment. Nous vous informerons de tout changement important en publiant les Conditions mises à jour sur notre site web et en mettant à jour la date de « Dernière mise à jour ». Votre utilisation continue de nos services après de telles modifications constitue votre acceptation des Conditions mises à jour.',
+                severabilityTitle: 'Divisibilité',
+                severabilityText: 'Si une disposition de ces Conditions est jugée inapplicable ou invalide, cette disposition sera limitée ou éliminée dans la mesure minimale nécessaire pour que les Conditions restantes restent en vigueur et de plein effet.',
+                entireTitle: 'Intégralité de l\'Accord',
+                entireText: 'Ces Conditions, ainsi que tout contrat de service ou énoncé de travail applicable, constituent l\'intégralité de l\'accord entre vous et Atom8 Consulting concernant l\'objet des présentes et remplacent tous les accords et ententes antérieurs, qu\'ils soient écrits ou oraux.',
+                contactTitle: 'Nous Contacter',
+                contactText: 'Si vous avez des questions concernant ces Conditions d\'Utilisation, veuillez nous contacter à :',
+                backHome: 'Retour à l\'Accueil',
+                copyright: '© 2025 Atom8 Consulting. Tous Droits Réservés.',
+                privacyPolicy: 'Politique de Confidentialité',
+                termsOfService: 'Conditions d\'Utilisation',
+            }
+        };
+
+        let currentLang = 'en';
+
+        const updateContent = () => {
+            const langData = content[currentLang];
+            
+            document.getElementById('current-lang').textContent = langData.langToggleText;
+            document.getElementById('nav-home').textContent = langData.navHome;
+            document.getElementById('nav-services').textContent = langData.navServices;
+            document.getElementById('nav-why').textContent = langData.navWhy;
+            document.getElementById('nav-contact').textContent = langData.navContact;
+            
+            document.getElementById('page-title').innerHTML = langData.pageTitle;
+            document.getElementById('last-updated').textContent = langData.lastUpdated;
+            
+            document.getElementById('agreement-title').textContent = langData.agreementTitle;
+            document.getElementById('agreement-text').textContent = langData.agreementText;
+            
+            document.getElementById('services-title').textContent = langData.servicesTitle;
+            document.getElementById('services-text').textContent = langData.servicesText;
+            document.getElementById('services-list').innerHTML = langData.servicesList;
+            
+            document.getElementById('responsibilities-title').textContent = langData.responsibilitiesTitle;
+            document.getElementById('responsibilities-intro').textContent = langData.responsibilitiesIntro;
+            document.getElementById('responsibilities-list').innerHTML = langData.responsibilitiesList;
+            
+            document.getElementById('ip-title').textContent = langData.ipTitle;
+            document.getElementById('our-ip-title').textContent = langData.ourIpTitle;
+            document.getElementById('our-ip-text').textContent = langData.ourIpText;
+            document.getElementById('deliverables-title').textContent = langData.deliverablesTitle;
+            document.getElementById('deliverables-text').textContent = langData.deliverablesText;
+            
+            document.getElementById('payment-title').textContent = langData.paymentTitle;
+            document.getElementById('payment-list').innerHTML = langData.paymentList;
+            
+            document.getElementById('confidentiality-title').textContent = langData.confidentialityTitle;
+            document.getElementById('confidentiality-text').textContent = langData.confidentialityText;
+            
+            document.getElementById('liability-title').textContent = langData.liabilityTitle;
+            document.getElementById('liability-text').textContent = langData.liabilityText;
+            
+            document.getElementById('warranties-title').textContent = langData.warrantiesTitle;
+            document.getElementById('warranties-text').textContent = langData.warrantiesText;
+            
+            document.getElementById('indemnification-title').textContent = langData.indemnificationTitle;
+            document.getElementById('indemnification-text').textContent = langData.indemnificationText;
+            
+            document.getElementById('termination-title').textContent = langData.terminationTitle;
+            document.getElementById('termination-text').textContent = langData.terminationText;
+            
+            document.getElementById('governing-title').textContent = langData.governingTitle;
+            document.getElementById('governing-text').textContent = langData.governingText;
+            
+            document.getElementById('modifications-title').textContent = langData.modificationsTitle;
+            document.getElementById('modifications-text').textContent = langData.modificationsText;
+            
+            document.getElementById('severability-title').textContent = langData.severabilityTitle;
+            document.getElementById('severability-text').textContent = langData.severabilityText;
+            
+            document.getElementById('entire-title').textContent = langData.entireTitle;
+            document.getElementById('entire-text').textContent = langData.entireText;
+            
+            document.getElementById('contact-title').textContent = langData.contactTitle;
+            document.getElementById('contact-text').textContent = langData.contactText;
+            
+            document.getElementById('back-home').innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>' + langData.backHome;
+            
+            document.getElementById('copyright-text').textContent = langData.copyright;
+            document.getElementById('privacy-link').textContent = langData.privacyPolicy;
+            document.getElementById('terms-link').textContent = langData.termsOfService;
+        };
+
+        document.getElementById('lang-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            document.documentElement.lang = currentLang;
+            updateContent();
+        });
+
+        document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        window.onload = () => {
+            document.documentElement.lang = currentLang;
+            updateContent();
+        };
+    </script>
+</body>
+</html>
