@@ -922,34 +922,38 @@
             });
         });
 
-        // --- Products Dropdown (Desktop) ---
-        const productsBtn = document.getElementById('nav-products');
+        // --- Products Dropdown with deferred close (Desktop) ---
         const productsDropdown = document.getElementById('products-dropdown');
         const productsChevron = document.getElementById('products-chevron');
+        let closeTimeout = null;
 
-        // Toggle on click
-        productsBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const isOpen = !productsDropdown.classList.contains('hidden');
-            productsDropdown.classList.toggle('hidden');
-            productsChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
-        });
-
-        // Hover open/close on the container so the dropdown stays open while moving from button to panel
-        const productsContainer = document.getElementById('products-dropdown-container');
-        productsContainer.addEventListener('mouseenter', () => {
+        function openDropdown() {
+            if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
             productsDropdown.classList.remove('hidden');
             productsChevron.style.transform = 'rotate(180deg)';
-        });
-        productsContainer.addEventListener('mouseleave', () => {
-            productsDropdown.classList.add('hidden');
-            productsChevron.style.transform = '';
+        }
+
+        function scheduleCloseDropdown() {
+            closeTimeout = setTimeout(() => {
+                productsDropdown.classList.add('hidden');
+                productsChevron.style.transform = '';
+                closeTimeout = null;
+            }, 100);
+        }
+
+        // Open on container hover
+        document.getElementById('products-dropdown-container').addEventListener('mouseenter', openDropdown);
+
+        // Schedule close on mouseleave (cancelled if mouse enters dropdown)
+        document.getElementById('products-dropdown-container').addEventListener('mouseleave', scheduleCloseDropdown);
+
+        // Cancel close when mouse enters the dropdown panel itself
+        productsDropdown.addEventListener('mouseenter', () => {
+            if (closeTimeout) { clearTimeout(closeTimeout); closeTimeout = null; }
         });
 
-        // Keep dropdown open when clicking inside it, prevent click-outside from closing
-        productsDropdown.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+        // Click inside dropdown should still work
+        productsDropdown.addEventListener('click', (e) => { e.stopPropagation(); });
 
         // Close when clicking outside
         document.addEventListener('click', (e) => {
