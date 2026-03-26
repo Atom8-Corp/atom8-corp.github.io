@@ -512,11 +512,13 @@
             productsDropdown.classList.toggle('hidden');
             productsChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
         });
-        productsBtn.addEventListener('mouseenter', () => {
+        // Hover open/close on the container so the dropdown stays open while moving from button to panel
+        const productsContainer = document.getElementById('products-dropdown-container');
+        productsContainer.addEventListener('mouseenter', () => {
             productsDropdown.classList.remove('hidden');
             productsChevron.style.transform = 'rotate(180deg)';
         });
-        productsBtn.addEventListener('mouseleave', () => {
+        productsContainer.addEventListener('mouseleave', () => {
             productsDropdown.classList.add('hidden');
             productsChevron.style.transform = '';
         });
