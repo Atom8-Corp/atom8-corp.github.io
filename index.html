@@ -218,6 +218,19 @@
                 <nav class="hidden md:flex items-center space-x-1">
                     <a href="#hero" id="nav-home" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Home</a>
                     <a href="#services-section" id="nav-services" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Services</a>
+                    <!-- Products Dropdown (Desktop) -->
+                    <div class="relative" id="products-dropdown-container">
+                        <button id="nav-products" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium flex items-center gap-1 cursor-pointer">
+                            <span id="nav-products-text">Products</span>
+                            <svg id="products-chevron" class="w-3 h-3 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="products-dropdown" class="hidden absolute top-full left-0 mt-2 w-48 rounded-xl glass py-2 z-[100] min-w-[160px]">
+                            <a href="claudit.html" id="dropdown-claudit-link" class="flex items-center gap-2 px-4 py-2.5 text-gray-300 hover:text-white hover:bg-white/5 text-sm transition-colors">
+                                <span class="w-1.5 h-1.5 rounded-full bg-primary-blue inline-block"></span>
+                                Claudit
+                            </a>
+                        </div>
+                    </div>
                     <a href="#why-us" id="nav-why" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Why Us</a>
                     <a href="#contact-footer" id="nav-contact" class="px-4 py-2 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all duration-200 text-sm font-medium">Contact</a>
                 </nav>
@@ -246,6 +259,19 @@
             <nav id="mobile-menu" class="hidden md:hidden mt-2 glass rounded-2xl p-4 space-y-2">
                 <a href="#hero" id="mobile-nav-home" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Home</a>
                 <a href="#services-section" id="mobile-nav-services" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Services</a>
+                <!-- Products (Mobile, expandable) -->
+                <div id="mobile-products-wrapper">
+                    <button id="mobile-nav-products-toggle" class="w-full flex items-center justify-between px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">
+                        <span id="mobile-nav-products-text">Products</span>
+                        <svg id="mobile-products-chevron" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mobile-products-dropdown" class="hidden pl-4">
+                        <a href="claudit.html" id="mobile-dropdown-claudit-link" class="flex items-center gap-2 px-4 py-2.5 text-gray-300 hover:text-white transition-colors text-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-blue inline-block"></span>
+                            Claudit
+                        </a>
+                    </div>
+                </div>
                 <a href="#why-us" id="mobile-nav-why" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Why Us</a>
                 <a href="#contact-footer" id="mobile-nav-contact" class="block px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all">Contact</a>
             </nav>
@@ -620,6 +646,7 @@
                     <ul class="space-y-3">
                         <li><a href="#hero" id="link-home" class="text-gray-400 hover:text-white transition-colors text-sm">Home</a></li>
                         <li><a href="#services-section" id="link-services" class="text-gray-400 hover:text-white transition-colors text-sm">Services</a></li>
+                        <li><a href="claudit.html" id="link-claudit" class="text-gray-400 hover:text-white transition-colors text-sm">Claudit</a></li>
                         <li><a href="#why-us" class="text-gray-400 hover:text-white transition-colors text-sm">Why Us</a></li>
                         <li><a href="#contact-footer" id="link-contact" class="text-gray-400 hover:text-white transition-colors text-sm">Contact</a></li>
                     </ul>
@@ -683,6 +710,7 @@
                 langToggleText: "FR",
                 navHome: 'Home',
                 navServices: 'Services',
+                navProducts: 'Products',
                 navWhy: 'Why Us',
                 navContact: 'Contact',
                 // Hero
@@ -741,6 +769,7 @@
                 langToggleText: "EN",
                 navHome: 'Accueil',
                 navServices: 'Services',
+                navProducts: 'Produits',
                 navWhy: 'Pourquoi Nous',
                 navContact: 'Contact',
                 // Hero
@@ -807,10 +836,12 @@
             // Navigation Links (Desktop and Mobile)
             document.getElementById('nav-home').textContent = langData.navHome;
             document.getElementById('nav-services').textContent = langData.navServices;
+            document.getElementById('nav-products-text').textContent = langData.navProducts;
             document.getElementById('nav-why').textContent = langData.navWhy;
             document.getElementById('nav-contact').textContent = langData.navContact;
             document.getElementById('mobile-nav-home').textContent = langData.navHome;
             document.getElementById('mobile-nav-services').textContent = langData.navServices;
+            document.getElementById('mobile-nav-products-text').textContent = langData.navProducts;
             document.getElementById('mobile-nav-why').textContent = langData.navWhy;
             document.getElementById('mobile-nav-contact').textContent = langData.navContact;
 
@@ -889,6 +920,44 @@
             link.addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.add('hidden');
             });
+        });
+
+        // --- Products Dropdown (Desktop) ---
+        const productsBtn = document.getElementById('nav-products');
+        const productsDropdown = document.getElementById('products-dropdown');
+        const productsChevron = document.getElementById('products-chevron');
+
+        // Toggle on click
+        productsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = !productsDropdown.classList.contains('hidden');
+            productsDropdown.classList.toggle('hidden');
+            productsChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+        });
+
+        // Hover open/close
+        document.getElementById('products-dropdown-container').addEventListener('mouseenter', () => {
+            productsDropdown.classList.remove('hidden');
+            productsChevron.style.transform = 'rotate(180deg)';
+        });
+        document.getElementById('products-dropdown-container').addEventListener('mouseleave', () => {
+            productsDropdown.classList.add('hidden');
+            productsChevron.style.transform = '';
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('products-dropdown-container').contains(e.target)) {
+                productsDropdown.classList.add('hidden');
+                productsChevron.style.transform = '';
+            }
+        });
+
+        // --- Mobile Products Expand/Collapse ---
+        document.getElementById('mobile-nav-products-toggle').addEventListener('click', () => {
+            const isOpen = !document.getElementById('mobile-products-dropdown').classList.contains('hidden');
+            document.getElementById('mobile-products-dropdown').classList.toggle('hidden');
+            document.getElementById('mobile-products-chevron').style.transform = isOpen ? '' : 'rotate(180deg)';
         });
 
         // Header scroll effect
