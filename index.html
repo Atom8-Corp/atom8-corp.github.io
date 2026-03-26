@@ -935,14 +935,19 @@
             productsChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
         });
 
-        // Hover open/close
-        document.getElementById('products-dropdown-container').addEventListener('mouseenter', () => {
+        // Hover open/close (attach to button, not container — avoids closing when mouse moves from button to dropdown)
+        productsBtn.addEventListener('mouseenter', () => {
             productsDropdown.classList.remove('hidden');
             productsChevron.style.transform = 'rotate(180deg)';
         });
-        document.getElementById('products-dropdown-container').addEventListener('mouseleave', () => {
+        productsBtn.addEventListener('mouseleave', () => {
             productsDropdown.classList.add('hidden');
             productsChevron.style.transform = '';
+        });
+
+        // Keep dropdown open when clicking inside it, prevent click-outside from closing
+        productsDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
 
         // Close when clicking outside

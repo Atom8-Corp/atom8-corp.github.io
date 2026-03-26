@@ -512,13 +512,16 @@
             productsDropdown.classList.toggle('hidden');
             productsChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
         });
-        document.getElementById('products-dropdown-container').addEventListener('mouseenter', () => {
+        productsBtn.addEventListener('mouseenter', () => {
             productsDropdown.classList.remove('hidden');
             productsChevron.style.transform = 'rotate(180deg)';
         });
-        document.getElementById('products-dropdown-container').addEventListener('mouseleave', () => {
+        productsBtn.addEventListener('mouseleave', () => {
             productsDropdown.classList.add('hidden');
             productsChevron.style.transform = '';
+        });
+        productsDropdown.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
         document.addEventListener('click', (e) => {
             if (!document.getElementById('products-dropdown-container').contains(e.target)) {
