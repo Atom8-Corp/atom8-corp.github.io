@@ -473,6 +473,42 @@
             </div>
         </section>
 
+        <!-- Product Spotlight: Claudit -->
+        <section id="product-section" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-blue/5 via-transparent to-accent-pink/5 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto relative">
+                <div class="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden reveal-item" data-delay="0">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-primary-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="relative">
+                        <span id="product-badge" class="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 mb-4">Our Product</span>
+                        <h2 id="product-title" class="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight">
+                            Meet Claudit — Continuous Azure Compliance, <span class="gradient-text">Automated.</span>
+                        </h2>
+                        <p id="product-desc" class="text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+                            Our AI-powered compliance platform continuously evaluates your Azure environment against the frameworks that matter — turning misconfigurations into clear, evidence-based remediation before they become audit findings.
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-10">
+                            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">SOC 2</span>
+                            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">HIPAA</span>
+                            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">ISO 27001</span>
+                            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">NIST 800-53</span>
+                            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">PCI DSS</span>
+                            <span class="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 border border-white/10 text-gray-300">EU AI Act</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="https://marketplace.microsoft.com/en-us/product/azure-application/atom8.claudit_mktpl_01?tab=Overview&utm_source=atom8.info&utm_medium=referral&utm_campaign=claudit&utm_content=home_product" target="_blank" rel="noopener" aria-label="Get Claudit — available on Microsoft Marketplace" class="inline-flex rounded-lg transition-transform duration-300 hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-blue focus-visible:ring-offset-2 focus-visible:ring-offset-dark-bg">
+                                <img src="assets/available-on-microsoft-marketplace.svg" alt="Available on Microsoft Marketplace" class="h-[54px] w-auto" />
+                            </a>
+                            <a href="claudit.html" id="product-learn-more" class="group inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary-blue to-accent-purple rounded-2xl shadow-xl shadow-primary-blue/25 hover:shadow-2xl hover:shadow-primary-blue/40 transition-all duration-300 transform hover:scale-[1.02]">
+                                Learn more
+                                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Why Choose Us Section -->
         <section id="why-us" class="py-24 px-4 sm:px-6 lg:px-8 bg-dark-card/30">
             <div class="max-w-7xl mx-auto">
@@ -746,6 +782,11 @@
                 serviceIotDesc: 'Real-time data processing at the source, connecting physical assets for operational control.',
                 serviceSecurityTitle: 'Cybersecurity',
                 serviceSecurityDesc: 'Proactive protection of digital assets, ensuring compliance and resilience against threats.',
+                // Product Spotlight
+                productBadge: 'Our Product',
+                productTitle: 'Meet Claudit — Continuous Azure Compliance, <span class="gradient-text">Automated.</span>',
+                productDesc: 'Our AI-powered compliance platform continuously evaluates your Azure environment against the frameworks that matter — turning misconfigurations into clear, evidence-based remediation before they become audit findings.',
+                productLearnMore: 'Learn more',
                 // CTA
                 ctaBadge: 'Let\'s Build Together',
                 ctaHeadline: 'Ready to Transform<br>Your <span class="gradient-text">Business?</span>',
@@ -805,6 +846,11 @@
                 serviceIotDesc: 'Traitement des données en temps réel à la source, connectant vos actifs physiques.',
                 serviceSecurityTitle: 'Cybersécurité',
                 serviceSecurityDesc: 'Protection proactive de vos actifs numériques, assurant conformité et résilience.',
+                // Product Spotlight
+                productBadge: 'Notre Produit',
+                productTitle: 'Découvrez Claudit — Conformité Azure Continue, <span class="gradient-text">Automatisée.</span>',
+                productDesc: 'Notre plateforme de conformité propulsée par l\'IA évalue en continu votre environnement Azure selon les référentiels qui comptent — transformant les erreurs de configuration en remédiation claire et fondée sur des preuves, avant qu\'elles ne deviennent des constats d\'audit.',
+                productLearnMore: 'En savoir plus',
                 // CTA
                 ctaBadge: 'Construisons Ensemble',
                 ctaHeadline: 'Prêt à Transformer<br>Votre <span class="gradient-text">Entreprise?</span>',
@@ -880,6 +926,12 @@
             document.getElementById('service-iot-desc').textContent = langData.serviceIotDesc;
             document.getElementById('service-security-title').textContent = langData.serviceSecurityTitle;
             document.getElementById('service-security-desc').textContent = langData.serviceSecurityDesc;
+
+            // Product Spotlight
+            document.getElementById('product-badge').textContent = langData.productBadge;
+            document.getElementById('product-title').innerHTML = langData.productTitle;
+            document.getElementById('product-desc').textContent = langData.productDesc;
+            document.getElementById('product-learn-more').innerHTML = langData.productLearnMore + ' <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>';
 
             document.getElementById('cta-headline').innerHTML = langData.ctaHeadline;
             document.getElementById('cta-subtext').textContent = langData.ctaSubtext;
