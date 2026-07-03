@@ -101,6 +101,20 @@
             background-size: 400% 400%;
         }
 
+        /* Contact modal entrance animation */
+        #contact-modal.is-open { display: flex; }
+        .contact-modal-panel {
+            animation: contact-modal-in 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes contact-modal-in {
+            0% { opacity: 0; transform: translateY(16px) scale(0.96); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .contact-input.invalid {
+            border-color: #F472B6 !important;
+            box-shadow: 0 0 0 1px #F472B6;
+        }
+
         /* Glassmorphism effect */
         .glass {
             background: rgba(255, 255, 255, 0.03);
@@ -737,6 +751,64 @@
         </div>
     </footer>
 
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div id="contact-modal-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <!-- Dialog -->
+        <div role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" class="contact-modal-panel relative w-full max-w-lg glass-card rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl shadow-primary-blue/10">
+            <!-- Close Button -->
+            <button id="contact-modal-close" type="button" aria-label="Close" class="absolute top-4 right-4 w-9 h-9 rounded-xl glass flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Header -->
+            <div class="mb-6">
+                <span id="contact-modal-badge" class="inline-block px-3 py-1 mb-3 text-xs font-semibold rounded-full bg-primary-blue/10 text-accent-purple border border-primary-blue/20">Get in Touch</span>
+                <h3 id="contact-modal-title" class="text-2xl font-black text-white">Let's Build Together<span class="text-accent-pink">.</span></h3>
+                <p id="contact-modal-subtitle" class="text-gray-400 text-sm mt-2">Tell us about your project and we'll get back to you shortly.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="contact-form" class="space-y-4" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="cf-name" id="cf-name-label" class="block text-sm font-medium text-gray-300 mb-1.5">Name <span class="text-accent-pink">*</span></label>
+                        <input type="text" id="cf-name" name="name" required autocomplete="name" class="contact-input w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-all">
+                    </div>
+                    <div>
+                        <label for="cf-email" id="cf-email-label" class="block text-sm font-medium text-gray-300 mb-1.5">Email <span class="text-accent-pink">*</span></label>
+                        <input type="email" id="cf-email" name="email" required autocomplete="email" class="contact-input w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-all">
+                    </div>
+                    <div>
+                        <label for="cf-phone" id="cf-phone-label" class="block text-sm font-medium text-gray-300 mb-1.5">Phone Number <span class="text-accent-pink">*</span></label>
+                        <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" class="contact-input w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-all">
+                    </div>
+                    <div>
+                        <label for="cf-title" id="cf-title-label" class="block text-sm font-medium text-gray-300 mb-1.5">Title <span class="text-accent-pink">*</span></label>
+                        <input type="text" id="cf-title" name="title" required autocomplete="organization-title" class="contact-input w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-all">
+                    </div>
+                </div>
+                <div>
+                    <label for="cf-company" id="cf-company-label" class="block text-sm font-medium text-gray-300 mb-1.5">Company <span class="text-accent-pink">*</span></label>
+                    <input type="text" id="cf-company" name="company" required autocomplete="organization" class="contact-input w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-all">
+                </div>
+                <div>
+                    <label for="cf-message" id="cf-message-label" class="block text-sm font-medium text-gray-300 mb-1.5">Message <span class="text-accent-pink">*</span></label>
+                    <textarea id="cf-message" name="message" rows="4" required class="contact-input w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue transition-all resize-none"></textarea>
+                </div>
+
+                <!-- Status message -->
+                <p id="contact-form-status" class="hidden text-sm rounded-xl px-4 py-3"></p>
+
+                <button type="submit" id="contact-form-submit" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-primary-blue to-accent-purple rounded-xl hover:shadow-lg hover:shadow-primary-blue/25 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
+                    <span id="contact-form-submit-text">Send Message</span>
+                    <svg id="contact-form-spinner" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- JavaScript for Language Toggle, Mobile Menu, and Animations -->
     <script>
         // Language content map
@@ -804,6 +876,19 @@
                 copyright: '© 2025 Atom8 Consulting. All Rights Reserved.',
                 privacyPolicy: 'Privacy Policy',
                 termsOfService: 'Terms of Service',
+                // Contact Modal
+                contactBadge: 'Get in Touch',
+                contactTitle: 'Let\'s Build Together',
+                contactSubtitle: 'Tell us about your project and we\'ll get back to you shortly.',
+                contactName: 'Name',
+                contactEmail: 'Email',
+                contactPhone: 'Phone Number',
+                contactJobTitle: 'Title',
+                contactCompany: 'Company',
+                contactMessage: 'Message',
+                contactSubmit: 'Send Message',
+                contactFormSuccess: 'Thanks! Your message has been sent. We\'ll be in touch soon.',
+                contactFormError: 'Please complete all fields correctly and try again.',
             },
             fr: {
                 // Header & Nav
@@ -868,6 +953,19 @@
                 copyright: '© 2025 Atom8 Consulting. Tous Droits Réservés.',
                 privacyPolicy: 'Politique de Confidentialité',
                 termsOfService: 'Conditions d\'Utilisation',
+                // Contact Modal
+                contactBadge: 'Contactez-Nous',
+                contactTitle: 'Construisons Ensemble',
+                contactSubtitle: 'Parlez-nous de votre projet et nous vous répondrons rapidement.',
+                contactName: 'Nom',
+                contactEmail: 'Courriel',
+                contactPhone: 'Numéro de Téléphone',
+                contactJobTitle: 'Fonction',
+                contactCompany: 'Entreprise',
+                contactMessage: 'Message',
+                contactSubmit: 'Envoyer le Message',
+                contactFormSuccess: 'Merci ! Votre message a été envoyé. Nous vous contacterons bientôt.',
+                contactFormError: 'Veuillez remplir correctement tous les champs et réessayer.',
             }
         };
 
@@ -952,6 +1050,18 @@
             document.getElementById('copyright-text').innerHTML = langData.copyright;
             document.getElementById('privacy-link').textContent = langData.privacyPolicy;
             document.getElementById('terms-link').textContent = langData.termsOfService;
+
+            // Contact Modal
+            document.getElementById('contact-modal-badge').textContent = langData.contactBadge;
+            document.getElementById('contact-modal-title').innerHTML = langData.contactTitle + '<span class="text-accent-pink">.</span>';
+            document.getElementById('contact-modal-subtitle').textContent = langData.contactSubtitle;
+            document.getElementById('cf-name-label').innerHTML = langData.contactName + ' <span class="text-accent-pink">*</span>';
+            document.getElementById('cf-email-label').innerHTML = langData.contactEmail + ' <span class="text-accent-pink">*</span>';
+            document.getElementById('cf-phone-label').innerHTML = langData.contactPhone + ' <span class="text-accent-pink">*</span>';
+            document.getElementById('cf-title-label').innerHTML = langData.contactJobTitle + ' <span class="text-accent-pink">*</span>';
+            document.getElementById('cf-company-label').innerHTML = langData.contactCompany + ' <span class="text-accent-pink">*</span>';
+            document.getElementById('cf-message-label').innerHTML = langData.contactMessage + ' <span class="text-accent-pink">*</span>';
+            document.getElementById('contact-form-submit-text').textContent = langData.contactSubmit;
         };
 
         // Event listener for language toggle button
@@ -1057,6 +1167,111 @@
             observer.observe(el);
         });
         
+        // --- Contact Modal ---
+        const contactModal = document.getElementById('contact-modal');
+        const contactForm = document.getElementById('contact-form');
+        const contactStatus = document.getElementById('contact-form-status');
+        const contactSubmitBtn = document.getElementById('contact-form-submit');
+        const contactSpinner = document.getElementById('contact-form-spinner');
+
+        function openContactModal() {
+            contactStatus.classList.add('hidden');
+            contactModal.classList.remove('hidden');
+            contactModal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            setTimeout(() => document.getElementById('cf-name').focus(), 100);
+        }
+
+        function closeContactModal() {
+            contactModal.classList.add('hidden');
+            contactModal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        // Open modal from any "Contact"/CTA link pointing to the footer
+        document.querySelectorAll('a[href="#contact-footer"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openContactModal();
+            });
+        });
+
+        document.getElementById('contact-modal-close').addEventListener('click', closeContactModal);
+        document.getElementById('contact-modal-backdrop').addEventListener('click', closeContactModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactModal.classList.contains('is-open')) closeContactModal();
+        });
+
+        // Clear invalid state on input
+        contactForm.querySelectorAll('.contact-input').forEach(field => {
+            field.addEventListener('input', () => field.classList.remove('invalid'));
+        });
+
+        // Handle submit -> FormSubmit.co (delivers to info@atom8.info)
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const t = content[currentLang];
+
+            // Validate all fields (all mandatory)
+            let firstInvalid = null;
+            contactForm.querySelectorAll('.contact-input').forEach(field => {
+                const valid = field.checkValidity() && field.value.trim() !== '';
+                field.classList.toggle('invalid', !valid);
+                if (!valid && !firstInvalid) firstInvalid = field;
+            });
+            if (firstInvalid) {
+                firstInvalid.focus();
+                showContactStatus(t.contactFormError, false);
+                return;
+            }
+
+            // Loading state
+            contactSubmitBtn.disabled = true;
+            contactSpinner.classList.remove('hidden');
+            contactStatus.classList.add('hidden');
+
+            const payload = {
+                name: document.getElementById('cf-name').value.trim(),
+                email: document.getElementById('cf-email').value.trim(),
+                phone: document.getElementById('cf-phone').value.trim(),
+                title: document.getElementById('cf-title').value.trim(),
+                company: document.getElementById('cf-company').value.trim(),
+                message: document.getElementById('cf-message').value.trim(),
+                _subject: 'New contact request from atom8.info',
+                _template: 'table',
+                _captcha: 'false'
+            };
+
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/info@atom8.info', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json().catch(() => ({}));
+                if (res.ok && (data.success === true || data.success === 'true')) {
+                    showContactStatus(t.contactFormSuccess, true);
+                    contactForm.reset();
+                } else {
+                    showContactStatus(t.contactFormError, false);
+                }
+            } catch (err) {
+                showContactStatus(t.contactFormError, false);
+            } finally {
+                contactSubmitBtn.disabled = false;
+                contactSpinner.classList.add('hidden');
+            }
+        });
+
+        function showContactStatus(msg, success) {
+            contactStatus.textContent = msg;
+            contactStatus.className = 'text-sm rounded-xl px-4 py-3 ' + (success
+                ? 'bg-green-500/10 text-green-300 border border-green-500/20'
+                : 'bg-accent-pink/10 text-accent-pink border border-accent-pink/20');
+        }
+
         // Initial content load
         window.onload = () => {
             document.documentElement.lang = currentLang;
