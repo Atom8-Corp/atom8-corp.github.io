@@ -888,7 +888,8 @@
                 contactMessage: 'Message',
                 contactSubmit: 'Send Message',
                 contactFormSuccess: 'Thanks! Your message has been sent. We\'ll be in touch soon.',
-                contactFormError: 'Please complete all fields correctly and try again.',
+                contactFormValidation: 'Please complete all fields correctly and try again.',
+                contactFormError: 'Something went wrong sending your message. Please try again in a moment.',
             },
             fr: {
                 // Header & Nav
@@ -965,7 +966,8 @@
                 contactMessage: 'Message',
                 contactSubmit: 'Envoyer le Message',
                 contactFormSuccess: 'Merci ! Votre message a été envoyé. Nous vous contacterons bientôt.',
-                contactFormError: 'Veuillez remplir correctement tous les champs et réessayer.',
+                contactFormValidation: 'Veuillez remplir correctement tous les champs et réessayer.',
+                contactFormError: 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer dans un instant.',
             }
         };
 
@@ -1223,7 +1225,7 @@
             });
             if (firstInvalid) {
                 firstInvalid.focus();
-                showContactStatus(t.contactFormError, false);
+                showContactStatus(t.contactFormValidation, false);
                 return;
             }
 
@@ -1254,6 +1256,9 @@
                 if (res.ok && (data.success === true || data.success === 'true')) {
                     showContactStatus(t.contactFormSuccess, true);
                     contactForm.reset();
+                } else if (data && data.message) {
+                    // Surface FormSubmit's own message (e.g. activation notice)
+                    showContactStatus(data.message, false);
                 } else {
                     showContactStatus(t.contactFormError, false);
                 }
