@@ -166,6 +166,85 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
   .mark{display:none}
   .mark.keep{display:block}
 }
+/* ---------- scoping-call booking modal ---------- */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(10,9,14,.74);backdrop-filter:blur(6px)}
+.modal-panel{position:relative;width:100%;max-width:900px;max-height:92vh;overflow-y:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:modal-in .24s cubic-bezier(.16,1,.3,1)}
+@keyframes modal-in{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.modal-head{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:11px 16px;background:var(--panel2);border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.modal-head b{color:var(--pink);font-weight:600}
+.modal-head .hd-right{display:flex;align-items:center;gap:14px}
+.modal-close{background:transparent;border:1px solid var(--line-soft);color:var(--muted);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:.95rem;line-height:1;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-family:inherit}
+.modal-close:hover{border-color:var(--pink);color:var(--pink)}
+.modal-body{padding:26px 26px 28px}
+.modal-body h3{font-size:clamp(1.35rem,2.6vw,1.65rem);font-weight:800;margin:8px 0 10px}
+.modal-body .sub{font-size:.92rem;margin-bottom:24px;max-width:none}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.book-col-title{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
+.fld{margin-bottom:13px}
+.fld label{display:block;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.fld .req{color:var(--pink)}
+.fld input,.fld select,.fld textarea{width:100%;padding:10px 12px;background:var(--panel2);border:1px solid var(--line-soft);border-radius:7px;color:var(--ink);font-family:inherit;font-size:.92rem;transition:border-color .15s ease,box-shadow .15s ease}
+.fld textarea{resize:vertical;min-height:74px;line-height:1.5}
+.fld select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%;background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:34px}
+.fld select option{background:var(--panel2);color:var(--ink)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 3px rgba(124,111,214,.18)}
+.fld input.invalid,.fld select.invalid,.fld textarea.invalid{border-color:var(--bad)}
+.fld input::placeholder,.fld textarea::placeholder{color:#6d6982}
+.fld-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* calendar */
+.cal{background:var(--panel2);border:1px solid var(--line-soft);border-radius:8px;padding:14px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.cal-title{font-family:'Archivo',sans-serif;font-weight:700;font-size:.98rem}
+.cal-nav{background:transparent;border:1px solid var(--line-soft);color:var(--ink);width:28px;height:28px;border-radius:6px;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:.8rem;line-height:1}
+.cal-nav:hover:not(:disabled){border-color:var(--pink);color:var(--pink)}
+.cal-nav:disabled{opacity:.28;cursor:not-allowed}
+.cal-dow,.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-dow span{text-align:center;font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--muted);padding:2px 0 6px}
+.cal-day{aspect-ratio:1/1;min-height:34px;border:1px solid transparent;background:transparent;color:var(--ink);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;cursor:pointer;font-variant-numeric:tabular-nums;transition:border-color .12s ease,color .12s ease}
+.cal-day:hover:not(:disabled):not(.sel){border-color:var(--violet);color:var(--pink)}
+.cal-day:disabled{color:#5c5872;cursor:not-allowed}
+.cal-day.sel{background:var(--grad);color:#17161d;font-weight:700}
+.cal-day.empty{visibility:hidden}
+.cal-legend{margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+/* time slots */
+.slots{margin-top:16px}
+.slots-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-height:154px;overflow-y:auto}
+.slot{padding:9px 4px;border:1px solid var(--line-soft);background:var(--panel2);color:var(--ink);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;cursor:pointer;transition:border-color .12s ease,color .12s ease}
+.slot:hover:not(.sel){border-color:var(--violet);color:var(--pink)}
+.slot.sel{background:var(--grad);color:#17161d;border-color:transparent;font-weight:600}
+.slot-empty{grid-column:1/-1;font-size:.86rem;color:var(--muted);padding:12px 0}
+.picked{display:none;margin-top:14px;padding:11px 13px;border:1px dashed var(--line);border-radius:7px;font-size:.86rem;background:rgba(124,111,214,.08)}
+.picked b{color:var(--pink)}
+.picked .tz{display:block;margin-top:3px;font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--muted)}
+/* footer of the form */
+.form-status{display:none;margin-top:18px;padding:11px 14px;border-radius:7px;font-size:.88rem}
+.form-status.show{display:block}
+.form-status.ok{background:rgba(76,195,138,.1);border:1px solid rgba(76,195,138,.32);color:var(--ok)}
+.form-status.err{background:rgba(229,103,123,.1);border:1px solid rgba(229,103,123,.32);color:var(--bad)}
+.modal-foot{margin-top:20px;padding-top:18px;border-top:1px solid var(--line-soft);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.modal-note{font-size:.78rem;color:var(--muted)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+.spin{display:none;width:14px;height:14px;margin-left:9px;vertical-align:-2px;border:2px solid rgba(23,22,29,.3);border-top-color:#17161d;border-radius:50%;animation:spin .7s linear infinite}
+.is-busy .spin{display:inline-block}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:560px){
+  .modal-head{font-size:.6rem;letter-spacing:.1em}
+  .modal-head .hd-more{display:none}
+}
+@media (max-width:760px){
+  .modal{padding:0}
+  .modal-panel{max-width:none;max-height:100vh;height:100%;border-radius:0;border:0}
+  .modal-body{padding:22px 18px 26px}
+  .book-grid{grid-template-columns:1fr;gap:26px}
+  .slot-grid{max-height:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .modal-panel{animation:none}
+  .cal-day,.slot,.fld input,.fld select,.fld textarea{transition:none}
+}
 </style>
 </head>
 <body>
@@ -178,7 +257,7 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
       <a href="#pricing">Pricing</a>
       <a href="#sample">Sample</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-primary btn-sm" href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request&body=Company%3A%0ARole%3A%0ADo%20you%20handle%20CUI%20(drawings%2C%20specs%2C%20technical%20data)%3F%3A%0ABest%20times%20for%20a%2030-minute%20call%3A">Book a scoping call</a>
+      <a class="btn btn-primary btn-sm" data-book href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request&body=Company%3A%0ARole%3A%0ADo%20you%20handle%20CUI%20(drawings%2C%20specs%2C%20technical%20data)%3F%3A%0ABest%20times%20for%20a%2030-minute%20call%3A">Book a scoping call</a>
     </div>
   </div>
 </nav>
@@ -190,7 +269,7 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
       <h1>The deadline isn't the problem. <em>The 6–12 months of prep is.</em></h1>
       <p class="sub">Starting November 10, 2026, new DoD contracts that involve CUI will require third-party CMMC Level 2 certification — self-attestation stops being enough. If your shop handles controlled drawings and hasn't started, you're late. You're not out. Atom8 gets small defense subcontractors assessment-ready on a fixed price, and coordinates the certification.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request&body=Company%3A%0ARole%3A%0ADo%20you%20handle%20CUI%20(drawings%2C%20specs%2C%20technical%20data)%3F%3A%0ABest%20times%20for%20a%2030-minute%20call%3A">Book a free 30-minute scoping call</a>
+        <a class="btn btn-primary" data-book href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request&body=Company%3A%0ARole%3A%0ADo%20you%20handle%20CUI%20(drawings%2C%20specs%2C%20technical%20data)%3F%3A%0ABest%20times%20for%20a%2030-minute%20call%3A">Book a free 30-minute scoping call</a>
         <a class="btn btn-ghost" href="#sample">See a full sample engagement</a>
       </div>
       <div class="cta-note">Fixed prices. No retainer to find out where you stand.</div>
@@ -284,7 +363,7 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
           <li>Full SSP, 14 policies, evidence package</li>
           <li>Mock assessment + C3PAO coordination included</li>
         </ul>
-        <a class="btn btn-primary" href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request">Scope my remediation</a>
+        <a class="btn btn-primary" data-book data-topic="Remediation Sprint (Stage 2)" href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request">Scope my remediation</a>
       </div>
       <div class="tier">
         <div class="k">Stage 3</div>
@@ -366,7 +445,7 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
       <div class="eyebrow" style="margin-bottom:10px">30 minutes · no charge · no obligation</div>
       <h2>Find out exactly where you stand.</h2>
       <p class="sub">One call: we confirm whether Level 2 applies to you, estimate your likely score range, and map what's achievable before your next re-compete. If we're not the right fit, we'll tell you.</p>
-      <a class="btn btn-primary" href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request&body=Company%3A%0ARole%3A%0ADo%20you%20handle%20CUI%20(drawings%2C%20specs%2C%20technical%20data)%3F%3A%0ABest%20times%20for%20a%2030-minute%20call%3A">Book my free scoping call</a>
+      <a class="btn btn-primary" data-book href="mailto:info@atom8.info?subject=Free%20CMMC%20scoping%20call%20request&body=Company%3A%0ARole%3A%0ADo%20you%20handle%20CUI%20(drawings%2C%20specs%2C%20technical%20data)%3F%3A%0ABest%20times%20for%20a%2030-minute%20call%3A">Book my free scoping call</a>
       <div class="cta-note" style="margin-top:16px">Or write directly: <a href="mailto:info@atom8.info">info@atom8.info</a></div>
     </div>
   </div>
@@ -387,6 +466,102 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
   </div>
 </footer>
 
+<!-- ============ Scoping-call booking modal ============ -->
+<div class="modal" id="book-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="book-title">
+    <div class="modal-head">
+      <span>REF: SCOPING CALL / 30 MIN<span class="hd-more"> · NO CHARGE</span></span>
+      <span class="hd-right"><b>ATOM8</b><button class="modal-close" type="button" data-close aria-label="Close">✕</button></span>
+    </div>
+    <div class="modal-body">
+      <div class="eyebrow">Book a free 30-minute scoping call</div>
+      <h3 id="book-title">Pick a time. We'll bring the checklist.</h3>
+      <p class="sub">We confirm whether Level 2 applies to you, estimate your likely SPRS range, and map what's still achievable before your next re-compete. You'll get a confirmation with a calendar invite — usually within a few business hours.</p>
+      <form id="book-form" novalidate>
+        <div class="book-grid">
+          <div>
+            <div class="book-col-title">01 · Who we're meeting</div>
+            <div class="fld-row">
+              <div class="fld">
+                <label for="bf-name">Name <span class="req">*</span></label>
+                <input type="text" id="bf-name" autocomplete="name" required>
+              </div>
+              <div class="fld">
+                <label for="bf-role">Role / title</label>
+                <input type="text" id="bf-role" autocomplete="organization-title" placeholder="e.g. Owner, IT Manager">
+              </div>
+            </div>
+            <div class="fld">
+              <label for="bf-company">Company <span class="req">*</span></label>
+              <input type="text" id="bf-company" autocomplete="organization" required>
+            </div>
+            <div class="fld-row">
+              <div class="fld">
+                <label for="bf-email">Work email <span class="req">*</span></label>
+                <input type="email" id="bf-email" autocomplete="email" required>
+              </div>
+              <div class="fld">
+                <label for="bf-phone">Phone</label>
+                <input type="tel" id="bf-phone" autocomplete="tel">
+              </div>
+            </div>
+            <div class="fld-row">
+              <div class="fld">
+                <label for="bf-size">Company size</label>
+                <select id="bf-size">
+                  <option value="">Select…</option>
+                  <option>1–10 employees</option>
+                  <option>11–25 employees</option>
+                  <option>26–50 employees</option>
+                  <option>51–100 employees</option>
+                  <option>100+ employees</option>
+                </select>
+              </div>
+              <div class="fld">
+                <label for="bf-cui">Do you handle CUI? <span class="req">*</span></label>
+                <select id="bf-cui" required>
+                  <option value="">Select…</option>
+                  <option>Yes — controlled drawings / technical data</option>
+                  <option>No — FCI only</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+            </div>
+            <div class="fld">
+              <label for="bf-notes">Anything we should know before the call?</label>
+              <textarea id="bf-notes" placeholder="Current contracts, DFARS clauses, what's already in place, deadlines you're working against…"></textarea>
+            </div>
+          </div>
+          <div>
+            <div class="book-col-title">02 · When it works for you</div>
+            <div class="cal">
+              <div class="cal-head">
+                <button type="button" class="cal-nav" id="cal-prev" aria-label="Previous month">&#8592;</button>
+                <div class="cal-title" id="cal-title" aria-live="polite">—</div>
+                <button type="button" class="cal-nav" id="cal-next" aria-label="Next month">&#8594;</button>
+              </div>
+              <div class="cal-dow" aria-hidden="true"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+              <div class="cal-days" id="cal-days" role="group" aria-label="Choose a date"></div>
+              <div class="cal-legend">Weekdays only · next 90 days</div>
+            </div>
+            <div class="slots">
+              <div class="slots-head"><span>Start time</span><span id="tz-label"></span></div>
+              <div class="slot-grid" id="slot-grid" role="group" aria-label="Choose a start time"></div>
+            </div>
+            <div class="picked" id="picked" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="form-status" id="book-status" role="status" aria-live="polite"></p>
+        <div class="modal-foot">
+          <button type="submit" class="btn btn-primary" id="book-submit">Request this time<span class="spin" aria-hidden="true"></span></button>
+          <span class="modal-note">Nothing is charged and nothing is committed. Prefer email? <a href="mailto:info@atom8.info">info@atom8.info</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script>
 // countdown to Phase 2
 (function(){
@@ -400,6 +575,207 @@ footer{border-top:1px solid var(--line-soft);padding:44px 0 56px;font-size:.8rem
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+})();
+
+// scoping-call booking modal: date + time picker, submits to info@atom8.info
+(function(){
+  var modal=document.getElementById('book-modal');
+  if(!modal||!window.fetch) return; // no JS support -> mailto fallback stays live
+
+  var form=document.getElementById('book-form'),
+      statusEl=document.getElementById('book-status'),
+      submitBtn=document.getElementById('book-submit'),
+      calTitle=document.getElementById('cal-title'),
+      calDays=document.getElementById('cal-days'),
+      prevBtn=document.getElementById('cal-prev'),
+      nextBtn=document.getElementById('cal-next'),
+      slotGrid=document.getElementById('slot-grid'),
+      pickedEl=document.getElementById('picked'),
+      tzLabel=document.getElementById('tz-label');
+
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'],
+      DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      SLOT_OPEN=9*60, SLOT_CLOSE=17*60, SLOT_LEN=30;
+
+  var TZ='';
+  try{ TZ=Intl.DateTimeFormat().resolvedOptions().timeZone||'' }catch(e){}
+  tzLabel.textContent=TZ?('Your time · '+TZ.replace(/_/g,' ')):'Your local time';
+
+  function midnight(d){return new Date(d.getFullYear(),d.getMonth(),d.getDate())}
+  function addDays(d,n){return new Date(d.getFullYear(),d.getMonth(),d.getDate()+n)}
+  function pad(n){return (n<10?'0':'')+n}
+
+  var today=midnight(new Date()), minDate=addDays(today,1), maxDate=addDays(today,90);
+  while(minDate.getDay()===0||minDate.getDay()===6) minDate=addDays(minDate,1);
+
+  var view=new Date(minDate.getFullYear(),minDate.getMonth(),1), selDate=null, selMin=null, topic='', lastFocus=null;
+
+  function fmtTime(m){var h=Math.floor(m/60),ap=h<12?'AM':'PM';return (h%12||12)+':'+pad(m%60)+' '+ap}
+  function fmtDate(d){return DAYS[d.getDay()]+', '+MONTHS[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear()}
+  function meetingStart(){return new Date(selDate.getFullYear(),selDate.getMonth(),selDate.getDate(),Math.floor(selMin/60),selMin%60,0,0)}
+  function utcStamp(d){return d.getUTCFullYear()+'-'+pad(d.getUTCMonth()+1)+'-'+pad(d.getUTCDate())+' '+pad(d.getUTCHours())+':'+pad(d.getUTCMinutes())}
+  function gmtOffset(d){var o=-d.getTimezoneOffset(),s=o<0?'-':'+';o=Math.abs(o);return 'GMT'+s+pad(Math.floor(o/60))+':'+pad(o%60)}
+
+  function renderCal(){
+    calTitle.textContent=MONTHS[view.getMonth()]+' '+view.getFullYear();
+    prevBtn.disabled=(view.getFullYear()<minDate.getFullYear())||(view.getFullYear()===minDate.getFullYear()&&view.getMonth()<=minDate.getMonth());
+    nextBtn.disabled=(view.getFullYear()>maxDate.getFullYear())||(view.getFullYear()===maxDate.getFullYear()&&view.getMonth()>=maxDate.getMonth());
+    var first=new Date(view.getFullYear(),view.getMonth(),1),
+        total=new Date(view.getFullYear(),view.getMonth()+1,0).getDate(), html='';
+    for(var i=0;i<first.getDay();i++) html+='<button type="button" class="cal-day empty" disabled tabindex="-1"></button>';
+    for(var d=1;d<=total;d++){
+      var dt=new Date(view.getFullYear(),view.getMonth(),d),
+          off=(dt.getDay()===0||dt.getDay()===6||dt<minDate||dt>maxDate),
+          on=(selDate&&dt.getTime()===selDate.getTime());
+      html+='<button type="button" class="cal-day'+(on?' sel':'')+'" data-day="'+d+'" aria-pressed="'+(on?'true':'false')+'" aria-label="'+fmtDate(dt)+'"'+(off?' disabled':'')+'>'+d+'</button>';
+    }
+    calDays.innerHTML=html;
+  }
+
+  function renderSlots(){
+    if(!selDate){slotGrid.innerHTML='<div class="slot-empty">Choose a date to see available start times.</div>';return}
+    var html='';
+    for(var m=SLOT_OPEN;m+SLOT_LEN<=SLOT_CLOSE;m+=SLOT_LEN){
+      var on=(selMin===m);
+      html+='<button type="button" class="slot'+(on?' sel':'')+'" data-min="'+m+'" aria-pressed="'+(on?'true':'false')+'">'+fmtTime(m)+'</button>';
+    }
+    slotGrid.innerHTML=html;
+  }
+
+  function renderPicked(){
+    if(selDate===null||selMin===null){pickedEl.style.display='none';return}
+    var start=meetingStart();
+    pickedEl.innerHTML='Requesting <b>'+fmtDate(selDate)+'</b> at <b>'+fmtTime(selMin)+' – '+fmtTime(selMin+SLOT_LEN)+'</b>'+
+      '<span class="tz">'+(TZ?TZ.replace(/_/g,' ')+' · ':'')+gmtOffset(start)+' · 30 minutes</span>';
+    pickedEl.style.display='block';
+  }
+
+  prevBtn.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCal()});
+  nextBtn.addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCal()});
+
+  calDays.addEventListener('click',function(e){
+    var b=e.target.closest('.cal-day');
+    if(!b||b.disabled) return;
+    selDate=new Date(view.getFullYear(),view.getMonth(),parseInt(b.getAttribute('data-day'),10));
+    selMin=null; renderCal(); renderSlots(); renderPicked();
+  });
+  slotGrid.addEventListener('click',function(e){
+    var b=e.target.closest('.slot');
+    if(!b) return;
+    selMin=parseInt(b.getAttribute('data-min'),10); renderSlots(); renderPicked();
+  });
+
+  function setStatus(msg,ok){
+    statusEl.textContent=msg;
+    statusEl.className='form-status show '+(ok?'ok':'err');
+  }
+  function clearStatus(){statusEl.className='form-status';statusEl.textContent=''}
+
+  form.querySelectorAll('input,select,textarea').forEach(function(f){
+    f.addEventListener('input',function(){f.classList.remove('invalid')});
+    f.addEventListener('change',function(){f.classList.remove('invalid')});
+  });
+
+  function openModal(e,trigger){
+    if(e) e.preventDefault();
+    lastFocus=trigger||document.activeElement;
+    topic=(trigger&&trigger.getAttribute('data-topic'))||'';
+    clearStatus();
+    if(!selDate) view=new Date(minDate.getFullYear(),minDate.getMonth(),1);
+    renderCal(); renderSlots(); renderPicked();
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    setTimeout(function(){document.getElementById('bf-name').focus()},60);
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus) lastFocus.focus();
+  }
+
+  document.querySelectorAll('[data-book]').forEach(function(el){
+    el.addEventListener('click',function(e){openModal(e,el)});
+  });
+  modal.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click',closeModal);
+  });
+  document.addEventListener('keydown',function(e){
+    if(!modal.classList.contains('open')) return;
+    if(e.key==='Escape'){closeModal();return}
+    if(e.key!=='Tab') return;
+    var f=[].slice.call(modal.querySelectorAll('button:not([disabled]),input,select,textarea,a[href]'))
+             .filter(function(el){return el.offsetParent!==null});
+    if(!f.length) return;
+    var first=f[0], last=f[f.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var firstBad=null;
+    form.querySelectorAll('[required]').forEach(function(f){
+      var ok=f.checkValidity()&&f.value.trim()!=='';
+      f.classList.toggle('invalid',!ok);
+      if(!ok&&!firstBad) firstBad=f;
+    });
+    if(firstBad){firstBad.focus();setStatus('Please complete the highlighted fields and try again.',false);return}
+    if(selDate===null||selMin===null){
+      setStatus('Please choose a date and a start time for the call.',false);
+      pickedEl.scrollIntoView({block:'nearest'});
+      return;
+    }
+
+    var v=function(id){return document.getElementById(id).value.trim()||'—'},
+        name=v('bf-name'), company=v('bf-company'), email=v('bf-email'),
+        start=meetingStart(), end=new Date(start.getTime()+SLOT_LEN*60000);
+
+    submitBtn.disabled=true; submitBtn.classList.add('is-busy'); clearStatus();
+
+    var payload={
+      'Requested date':fmtDate(selDate),
+      'Requested time':fmtTime(selMin)+' – '+fmtTime(selMin+SLOT_LEN)+'  ('+(TZ||'requester local time')+', '+gmtOffset(start)+')',
+      'Requested time (UTC)':utcStamp(start)+' – '+utcStamp(end)+' UTC',
+      'Duration':'30 minutes',
+      'Name':name,
+      'Role / title':v('bf-role'),
+      'Company':company,
+      'Company size':v('bf-size'),
+      'Work email':email,
+      'Phone':v('bf-phone'),
+      'Handles CUI':v('bf-cui'),
+      'Notes':v('bf-notes'),
+      'Interested in':topic||'CMMC Level 2 scoping call',
+      'Submitted from':'atom8.info/cmmc-level-2.html',
+      '_subject':'CMMC scoping call request — '+company+' — '+MONTHS[selDate.getMonth()].slice(0,3)+' '+selDate.getDate()+', '+fmtTime(selMin),
+      '_replyto':email,
+      '_template':'table',
+      '_captcha':'false'
+    };
+
+    fetch('https://formsubmit.co/ajax/info@atom8.info',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(res){
+      return res.json().catch(function(){return {}}).then(function(data){return {ok:res.ok,data:data}});
+    }).then(function(r){
+      if(r.ok&&(r.data.success===true||r.data.success==='true')){
+        setStatus('Request sent. We’ll confirm '+fmtDate(selDate)+' at '+fmtTime(selMin)+' — or propose the closest slot — by email, usually within a few business hours.',true);
+        form.reset(); selDate=null; selMin=null; renderCal(); renderSlots(); renderPicked();
+      }else if(r.data&&r.data.message){
+        setStatus(r.data.message,false);
+      }else{
+        setStatus('Something went wrong sending your request. Please try again, or email info@atom8.info directly.',false);
+      }
+    }).catch(function(){
+      setStatus('Something went wrong sending your request. Please try again, or email info@atom8.info directly.',false);
+    }).then(function(){
+      submitBtn.disabled=false; submitBtn.classList.remove('is-busy');
+    });
+  });
 })();
 </script>
 </body>
